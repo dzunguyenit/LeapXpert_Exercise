@@ -71,6 +71,18 @@
 		</dependency>
 
 		<dependency>
+			<groupId>io.appium</groupId>
+			<artifactId>java-client</artifactId>
+			<version>7.3.0</version>
+			<exclusions>
+				<exclusion>
+					<groupId>org.slf4j</groupId>
+					<artifactId>slf4j-api</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
+		<dependency>
 			<groupId>info.cukes</groupId>
 			<artifactId>cucumber-picocontainer</artifactId>
 			<version>1.2.5</version>
@@ -118,8 +130,8 @@
 							<projectName>JAVA CUCUMBER REPORT - BANK GURU</projectName>
 							<outputDirectory>${project.build.directory}/site/cucumber-reports</outputDirectory>
 							<cucumberOutput>${project.build.directory}/site/cucumber.json</cucumberOutput>
-							<enableFlashCharts>true</enableFlashCharts>
-							<skippedFails>true</skippedFails>
+<!--							<enableFlashCharts>true</enableFlashCharts>-->
+<!--							<skippedFails>true</skippedFails>-->
 						</configuration>
 					</execution>
 				</executions>
