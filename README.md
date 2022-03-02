@@ -24,12 +24,13 @@ Intellij menu, click Build > Build Project
 
 $ mvn clean compile
 
-Command Line Run the test from file "runLeapXpert.bat"
+Run the test from file "runLeapXpert.bat"
 
-Run all tests through maven by runAspire.xml suites $ mvn test
+Command Line Run the test
+
+$ mvn test verify
 
 Result:
+Cucumber report: 
 
-Report
-
-https://github.com/dzunguyenit/AspireAssignment/blob/main/ReportsImage/report.png
+https://github.com/dzunguyenit/LeapXpert_Exercise/blob/master/ReportsImage/CucumberReport.png
