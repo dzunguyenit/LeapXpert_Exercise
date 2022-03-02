@@ -1,11 +1,8 @@
 @ChatFeature
-Feature: Payment feature
-  As an automation tester
-  I want a payment function
-  So that I want to make sure payment correctly
+Feature: Chat Feature
 
   @Login_Chat_Message
-  Scenario: Create account, login and verify login successfully
+  Scenario: Verify function chat from app to web
     Given I navigate to Web Application "https://web.qa.leapxpert.app/" with company "auto_testing", username "automation_auto_2021" and password "Testing@123"
     When User01 requests the QR code from the Web Application
     When User01 launch app and input QR code
