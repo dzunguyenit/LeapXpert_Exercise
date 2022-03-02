@@ -2,7 +2,7 @@ Automation Page Object Model Framework - Using Java, Selenium, Appium, Maven, Cu
 
 Resources
 
-Selenium, Appium, Maven, Cucumber, Cucumber Report Examples Demo suites: Register successful with new account Incorporated/UnIncorporated /*
+Selenium, Appium, Maven, Cucumber, Cucumber Report
 
 SCENARIO: Login_Chat_Message: 
 
