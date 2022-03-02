@@ -40,65 +40,65 @@ public class RegisterSteps extends CommonTestCase {
     @Given("^I navigate to Guru bank and click Here link$")
     public void i_navigate_to_Guru_bank() {
 
-//        String version = "98.0.4758.102";
-//        String urlLeadExpert = "https://web.qa.leapxpert.app/";
-//        ChromeDriverManager.getInstance().version(version).setup();
-//        driver = new ChromeDriver();
-//        driver.get(urlLeadExpert);
-//        driver.manage().window().maximize();
-//
-//        String company = "auto_testing";
-//        String username01 = "automation_auto_2022";
-//        String username02 = "automation_auto_2022";
-//        String password = "Testing@123";
-//
-//        String securityCode = "111111";
-//
-//        WebDriverWait wait = new WebDriverWait(driver, 30);
-//
-//        wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("input[placeholder=Company]")));
-//        WebElement txtCompany = driver.findElement(By.cssSelector("input[placeholder=Company]"));
-//        txtCompany.sendKeys(company);
-//
-//        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[text()='Next']")));
-//        WebElement btnNext = driver.findElement(By.xpath("//span[text()='Next']"));
-//        btnNext.click();
-//
-//        wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("input[data-testid=usernameLogin]")));
-//        WebElement txtUsername = driver.findElement(By.cssSelector("input[data-testid=usernameLogin]"));
-//        txtUsername.sendKeys(username01);
-//
-//        wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("input[data-testid=passwordLogin]")));
-//        WebElement txtPassword = driver.findElement(By.cssSelector("input[data-testid=passwordLogin]"));
-//        txtPassword.sendKeys(password);
-//
-//        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[contains(@class,'Login_button') and text()='Login']")));
-//        WebElement btnLogIn = driver.findElement(By.xpath("//span[contains(@class,'Login_button') and text()='Login']"));
-//        btnLogIn.click();
-//
-//        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//input[@type='tel'])[1]")));
-//        WebElement txtSecurityCode = driver.findElement(By.xpath("(//input[@type='tel'])[1]"));
-//        txtSecurityCode.sendKeys(securityCode);
-//
-//        wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("a[data-testid=link-to-profile-page] div")));
-//        WebElement lbAvatar = driver.findElement(By.cssSelector("a[data-testid=link-to-profile-page] div"));
-//        lbAvatar.click();
-//
-//        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[contains(@class,'Account_button__1g') and contains(.,'Devices')]")));
-//        WebElement lbDevices = driver.findElement(By.xpath("//div[contains(@class,'Account_button__1g') and contains(.,'Devices')]"));
-//        lbDevices.click();
-//
-//        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[contains(text(),'Link Device')]")));
-//        WebElement btnLinkDevices = driver.findElement(By.xpath("//button[contains(text(),'Link Device')]"));
-//        btnLinkDevices.click();
-//
-//        try {
-//            Thread.sleep(3000);
-//        } catch (Exception e) {
-//        }
-//        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[contains(@class,'LinkDeviceModal_code-name')]")));
-//        WebElement lbActivationCode = driver.findElement(By.xpath("//div[contains(@class,'LinkDeviceModal_code-name')]"));
-//        String activationCode = lbActivationCode.getText();
+        String version = "98.0.4758.102";
+        String urlLeadExpert = "https://web.qa.leapxpert.app/";
+        ChromeDriverManager.getInstance().version(version).setup();
+        driver = new ChromeDriver();
+        driver.get(urlLeadExpert);
+        driver.manage().window().maximize();
+
+        String company = "auto_testing";
+        String username01 = "automation_auto_2022";
+        String username02 = "automation_auto_2022";
+        String password = "Testing@123";
+
+        String securityCode = "111111";
+
+        WebDriverWait wait = new WebDriverWait(driver, 30);
+
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("input[placeholder=Company]")));
+        WebElement txtCompany = driver.findElement(By.cssSelector("input[placeholder=Company]"));
+        txtCompany.sendKeys(company);
+
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[text()='Next']")));
+        WebElement btnNext = driver.findElement(By.xpath("//span[text()='Next']"));
+        btnNext.click();
+
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("input[data-testid=usernameLogin]")));
+        WebElement txtUsername = driver.findElement(By.cssSelector("input[data-testid=usernameLogin]"));
+        txtUsername.sendKeys(username01);
+
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("input[data-testid=passwordLogin]")));
+        WebElement txtPassword = driver.findElement(By.cssSelector("input[data-testid=passwordLogin]"));
+        txtPassword.sendKeys(password);
+
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[contains(@class,'Login_button') and text()='Login']")));
+        WebElement btnLogIn = driver.findElement(By.xpath("//span[contains(@class,'Login_button') and text()='Login']"));
+        btnLogIn.click();
+
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//input[@type='tel'])[1]")));
+        WebElement txtSecurityCode = driver.findElement(By.xpath("(//input[@type='tel'])[1]"));
+        txtSecurityCode.sendKeys(securityCode);
+
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("a[data-testid=link-to-profile-page] div")));
+        WebElement lbAvatar = driver.findElement(By.cssSelector("a[data-testid=link-to-profile-page] div"));
+        lbAvatar.click();
+
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[contains(@class,'Account_button__1g') and contains(.,'Devices')]")));
+        WebElement lbDevices = driver.findElement(By.xpath("//div[contains(@class,'Account_button__1g') and contains(.,'Devices')]"));
+        lbDevices.click();
+
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[contains(text(),'Link Device')]")));
+        WebElement btnLinkDevices = driver.findElement(By.xpath("//button[contains(text(),'Link Device')]"));
+        btnLinkDevices.click();
+
+        try {
+            Thread.sleep(3000);
+        } catch (Exception e) {
+        }
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[contains(@class,'LinkDeviceModal_code-name')]")));
+        WebElement lbActivationCode = driver.findElement(By.xpath("//div[contains(@class,'LinkDeviceModal_code-name')]"));
+        String activationCode = lbActivationCode.getText();
 
 
         //Init mobile
