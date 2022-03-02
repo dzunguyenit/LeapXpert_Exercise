@@ -127,7 +127,7 @@
 							<goal>generate</goal>
 						</goals>
 						<configuration>
-							<projectName>JAVA CUCUMBER REPORT - BANK GURU</projectName>
+							<projectName>CUCUMBER REPORT - LEAPXPERT</projectName>
 							<outputDirectory>${project.build.directory}/site/cucumber-reports</outputDirectory>
 							<cucumberOutput>${project.build.directory}/site/cucumber.json</cucumberOutput>
 <!--							<enableFlashCharts>true</enableFlashCharts>-->

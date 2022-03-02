@@ -7,10 +7,10 @@ import cucumber.api.SnippetType;
 import cucumber.api.junit.Cucumber;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features = "src/test/java/features", glue = "stepDefinitions", monochrome = true, plugin = { "pretty",
-		"html:target/site/cucumber-reports",
-		"json:target/site/cucumber.json" }, snippets = SnippetType.CAMELCASE, tags = {
-				"@LogInGuruBank" })
+@CucumberOptions(features = "src/test/java/features", glue = "stepDefinitions", monochrome = true, plugin = {"pretty",
+        "html:target/site/cucumber-reports",
+        "json:target/site/cucumber.json"}, snippets = SnippetType.CAMELCASE, tags = {
+        "@Login_Chat_Message"})
 public class RunCucumber {
 
 }

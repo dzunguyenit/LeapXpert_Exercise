@@ -1,60 +1,43 @@
 package stepDefinitions;
 
+import cucumber.api.PendingException;
+import cucumber.api.java.en.Given;
+import cucumber.api.java.en.Then;
+import cucumber.api.java.en.When;
 import io.appium.java_client.AppiumDriver;
-import io.appium.java_client.MobileBy;
-import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
 import io.github.bonigarcia.wdm.ChromeDriverManager;
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
-import org.openqa.selenium.support.PageFactory;
-
-import commons.CommonTestCase;
-import cucumber.api.java.en.Given;
-import cucumber.api.java.en.When;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import pages.LoginPage;
-import pages.RegisterPage;
 
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
-public class RegisterSteps extends CommonTestCase {
-    //	LoginPage loginPage;
-//	RegisterPage registerPage;
+public class LogInAndChatSteps {
     WebDriver driver;
     AppiumDriver<WebElement> androidDriver;
+    WebDriverWait wait;
+    String activationCode;
 
-
-//	public RegisterSteps() {
-//		driver = CommonTestCase.openBrowser();
-//		loginPage = PageFactory.initElements(driver, LoginPage.class);
-//	}
-
-    @Given("^I navigate to Guru bank and click Here link$")
-    public void i_navigate_to_Guru_bank() {
+    @Given("^I navigate to Web Application \"([^\"]*)\" with company \"([^\"]*)\", username \"([^\"]*)\" and password \"([^\"]*)\"$")
+    public void iNavigateToWebApplicationWithCompanyUsernameAndPassword(String urlLeadExpert, String company, String username01, String password) throws Throwable {
 
         String version = "98.0.4758.102";
-        String urlLeadExpert = "https://web.qa.leapxpert.app/";
         ChromeDriverManager.getInstance().version(version).setup();
         driver = new ChromeDriver();
         driver.get(urlLeadExpert);
         driver.manage().window().maximize();
 
-        String company = "auto_testing";
-        String username01 = "automation_auto_2022";
-        String username02 = "automation_auto_2022";
-        String password = "Testing@123";
-
+//        String username02 = "automation_auto_2022";
         String securityCode = "111111";
 
-        WebDriverWait wait = new WebDriverWait(driver, 30);
+        wait = new WebDriverWait(driver, 30);
 
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("input[placeholder=Company]")));
         WebElement txtCompany = driver.findElement(By.cssSelector("input[placeholder=Company]"));
@@ -79,6 +62,10 @@ public class RegisterSteps extends CommonTestCase {
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//input[@type='tel'])[1]")));
         WebElement txtSecurityCode = driver.findElement(By.xpath("(//input[@type='tel'])[1]"));
         txtSecurityCode.sendKeys(securityCode);
+    }
+
+    @When("^User01 requests the QR code from the Web Application$")
+    public void userRequestsTheQRCodeFromTheWebApplication() {
 
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("a[data-testid=link-to-profile-page] div")));
         WebElement lbAvatar = driver.findElement(By.cssSelector("a[data-testid=link-to-profile-page] div"));
@@ -98,9 +85,17 @@ public class RegisterSteps extends CommonTestCase {
         }
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[contains(@class,'LinkDeviceModal_code-name')]")));
         WebElement lbActivationCode = driver.findElement(By.xpath("//div[contains(@class,'LinkDeviceModal_code-name')]"));
-        String activationCode = lbActivationCode.getText();
+        activationCode = lbActivationCode.getText();
 
-        //Init mobile
+
+//        WebDriverWait waitMobile = new WebDriverWait(androidDriver, 30);
+
+//        wait.until(ExpectedConditions.visibilityOfElementLocated(MobileBy.xpath("//android.view.ViewGroup[@content-desc='tutorial_skip']")));
+
+    }
+
+    @When("^User01 lanch app and input QR code$")
+    public void userLanchAppAndInputQRCode() {
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("platform", "Android");
@@ -128,16 +123,18 @@ public class RegisterSteps extends CommonTestCase {
         } catch (Exception e) {
         }
 
-
-//        WebDriverWait waitMobile = new WebDriverWait(androidDriver, 30);
-
-//        wait.until(ExpectedConditions.visibilityOfElementLocated(MobileBy.xpath("//android.view.ViewGroup[@content-desc='tutorial_skip']")));
         AndroidElement btnSkip = (AndroidElement) androidDriver.findElement(By.xpath("//android.view.ViewGroup[@content-desc='tutorial_skip']"));
         btnSkip.click();
 
 //        wait.until(ExpectedConditions.visibilityOfElementLocated(MobileBy.xpath("(//android.widget.EditText)[1]")));
         AndroidElement txtQRCode = (AndroidElement) androidDriver.findElement(By.xpath("(//android.widget.EditText)[1]"));
         txtQRCode.sendKeys(activationCode);
+    }
+
+    @Then("^Quit app and website$")
+    public void quitAppAndWebsite() {
+        driver.quit();
+        androidDriver.quit();
     }
 
 //	@When("^I input email \"(.*?)\"$")
