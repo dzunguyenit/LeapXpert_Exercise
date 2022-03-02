@@ -22,10 +22,21 @@ Running Tests Edit runAspire.xml to run suite
 
 Intellij menu, click Build > Build Project
 
+Pre-requisites:
+
+Start appium server by command line:
+
+$ appium
+
+Result is displayed:
+
+[Appium] Welcome to Appium v1.21.0
+[Appium] Appium REST http interface listener started on 0.0.0.0:4723
+
+Open with new tab command line:
 $ mvn clean compile
 
 Run the test from file "runLeapXpert.bat"
-
 Command Line Run the test
 
 $ mvn test verify
