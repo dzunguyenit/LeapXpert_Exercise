@@ -100,7 +100,6 @@ public class RegisterSteps extends CommonTestCase {
         WebElement lbActivationCode = driver.findElement(By.xpath("//div[contains(@class,'LinkDeviceModal_code-name')]"));
         String activationCode = lbActivationCode.getText();
 
-
         //Init mobile
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
@@ -130,11 +129,15 @@ public class RegisterSteps extends CommonTestCase {
         }
 
 
-//        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//android.view.ViewGroup[@content-desc='tutorial_skip']")));
+//        WebDriverWait waitMobile = new WebDriverWait(androidDriver, 30);
+
+//        wait.until(ExpectedConditions.visibilityOfElementLocated(MobileBy.xpath("//android.view.ViewGroup[@content-desc='tutorial_skip']")));
         AndroidElement btnSkip = (AndroidElement) androidDriver.findElement(By.xpath("//android.view.ViewGroup[@content-desc='tutorial_skip']"));
         btnSkip.click();
-//        MobileElement btnSkip = (MobileElement) driver.findElement(MobileBy.xpath("//android.view.ViewGroup[@content-desc='tutorial_skip']"));
-//        btnSkip.click();
+
+//        wait.until(ExpectedConditions.visibilityOfElementLocated(MobileBy.xpath("(//android.widget.EditText)[1]")));
+        AndroidElement txtQRCode = (AndroidElement) androidDriver.findElement(By.xpath("(//android.widget.EditText)[1]"));
+        txtQRCode.sendKeys(activationCode);
     }
 
 //	@When("^I input email \"(.*?)\"$")
