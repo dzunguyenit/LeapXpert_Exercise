@@ -87,14 +87,10 @@ public class LogInAndChatSteps {
         WebElement lbActivationCode = driver.findElement(By.xpath("//div[contains(@class,'LinkDeviceModal_code-name')]"));
         activationCode = lbActivationCode.getText();
 
-
-//        WebDriverWait waitMobile = new WebDriverWait(androidDriver, 30);
-
-//        wait.until(ExpectedConditions.visibilityOfElementLocated(MobileBy.xpath("//android.view.ViewGroup[@content-desc='tutorial_skip']")));
-
+        System.out.println("Activation Code = "+activationCode);
     }
 
-    @When("^User01 lanch app and input QR code$")
+    @When("^User01 launch app and input QR code$")
     public void userLanchAppAndInputQRCode() {
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
@@ -136,26 +132,5 @@ public class LogInAndChatSteps {
         driver.quit();
         androidDriver.quit();
     }
-
-//	@When("^I input email \"(.*?)\"$")
-//	public void clearAndInputDynamicTextbox(String dataValue) {
-//		registerPage.inputEmail(dataValue + randomEmail() + "@gmail.com");
-//	}
-//
-//	@When("^I click to submit account$")
-//	public void i_clicktosubmit_button() {
-//		registerPage.clickSubmitAccount();
-//	}
-//
-//	@When("^I get email and password$")
-//	public void i_input_email_to_register() {
-//		usernameLogin = registerPage.getUserIDInfo();
-//		passwordLogin = registerPage.getPasswordIDInfo();
-//	}
-
-//	@When("^I open login page$")
-//	public void i_Open_Login_Page() {
-//		loginPage = registerPage.openLoginPage(loginURL);
-//	}
 
 }
