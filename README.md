@@ -4,7 +4,7 @@ Resources
 
 Selenium, Appium, Maven, Cucumber, Cucumber Report Examples Demo suites: Register successful with new account Incorporated/UnIncorporated /*
 
-SCENARIO: tc_01_LogInSuccessfully: 1: Go to aspire login page: https://aspireapp.odoo.com/ 2: Log In with a username and password: user@aspireapp.com/@sp1r3app 3: Verify HomePage is open with url: https://aspireapp.odoo.com/web#cids=1&action=menu and avatar user is displayed
+SCENARIO: Login_Chat_Message: 
 
 1. User 1 (automation_auto_31) logs in the Web Application https://web.qa.leapxpert.app/ 
 2. User 1 requests the QR code from the Web Application to allow to log in the Mobile App 
